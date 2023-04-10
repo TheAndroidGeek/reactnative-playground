@@ -4,15 +4,7 @@ import ColorButton from "./components/ColorButton";
 import defaultColors from "./data/defaultColors.json";
 import ColorForm from "./components/ColorForm";
 import { generate } from "shortid";
-
-const useColors = () => {
-  const [colors, setColors] = useState([]);
-  const addColor = (color) => {
-    const newColor = { id: generate(), color };
-    setColors([newColor, ...colors]);
-  };
-  return { colors, addColor };
-};
+import { useColors } from "./hooks";
 
 export default function App() {
   const [backgroundColor, setBackgroundColor] = useState("blue");
